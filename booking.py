@@ -295,6 +295,14 @@ class BookingRoom(osv.Model):
             relation='bbs_booking.booking.room',
             string="Departure day",
         ),
+        'type_id': fields.related(
+            'room_id',
+            'type_id',
+            readonly=True,
+            type='many2one',
+            relation='bbs_booking.room.type',
+            string="Type of the room",
+        ),
     }
 
 

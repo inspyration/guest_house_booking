@@ -135,10 +135,10 @@
                         <notebook>
                             <page string="Rooms">
                                 <field name="room_ids">
-                                    <!--<tree>
-                                        <field name="name"/>
+                                    <tree>
+                                        <field name="room_id"/>
                                         <field name="type_id"/>
-                                </tree>-->
+                                    </tree>
                                 </field>
                             </page>
                         </notebook>
