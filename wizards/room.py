@@ -15,6 +15,7 @@ class BookingRoomWizard(osv.TransientModel):
     def _room_selection(self, cr, uid, context=None):
         booking_room_model = self.pool.get('bbs_booking.booking.room')
         room_model = self.pool.get('bbs_booking.room')
+        booking_model = self.pool.get('bbs_booking.booking')
 
         if context is None or not context.has_key("booking_id"):
             return []
@@ -41,6 +42,22 @@ class BookingRoomWizard(osv.TransientModel):
             [('id','not in',excluded_ids)],
             context=context,
         )
+
+        # booking's dates
+        booking_read = booking_model.read(
+            cr,
+            uid,
+            context['booking_id'],
+            ['departure_date','arrival_date'],
+            context=context,
+        )
+        arrival_date = booking_read['arrival_date']
+        departure_date = booking_read['departure_date']
+
+        # only rooms available for the booking's dates
+        room_ids = [id for id in room_ids
+            if room_model.is_available(cr, uid, id,arrival_date,departure_date,context=context)]
+                
 
         # return 2 uplets (id, name)
         return [(r['id'], r['name']) for r in room_model.read(

@@ -258,7 +258,8 @@ class Booking(osv.Model):
         _logger.debug("len du search : %s" % long)
         res = long == 0
         _logger.debug("res (true or false) : %s" % res)
-        return res
+        return True
+        #return res
 
 
 
@@ -343,6 +344,27 @@ class Room(osv.Model):
             string="Bookings",
         ),
     }
+    
+    def is_available(self, cr, uid, ids, date_start, date_stop, context=None, *args):
+        """
+        Return if the room is free
+        """
+        booking_room_model = self.pool.get('bbs_booking.booking.room')
+        args_search = [
+            ('room_id','=',ids),
+            ('state', '!=', 'denied'),
+            '!',
+            '|',
+            ('arrival_date','>=',date_stop),
+            ('departure_date','<=',date_start),
+        ]
+        result = booking_room_model.search(
+            cr,
+            uid,
+            args=args_search,
+            context=context,
+        )
+        return len(result) == 0
 
 
 

@@ -182,7 +182,7 @@
             <field name="name">Booking Calendar</field>
             <field name="model">bbs_booking.booking</field>
             <field name="arch" type="xml">
-                <calendar string="Bookings calendar" color="room_ids" date_start="arrival_date" date_stop="departure_date">
+                <calendar string="Bookings calendar" color="state" date_start="arrival_date" date_stop="departure_date">
                     <field name="name"/>
                 </calendar>
             </field>
