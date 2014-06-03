@@ -43,14 +43,26 @@
         </record>
 
          <record id="action_bbs_booking_booking_room" model="ir.actions.act_window">
-            <field name="name">Rooms management</field>
+            <field name="name">Bookings' Rooms management</field>
             <field name="res_model">bbs_booking.booking.room</field>
-            <field name="view_mode">calendar,tree,form</field>
+            <field name="view_mode">calendar</field>
+        </record>
+
+         <record id="action_bbs_booking_room" model="ir.actions.act_window">
+            <field name="name">Rooms management</field>
+            <field name="res_model">bbs_booking.room</field>
+            <field name="view_mode">tree,form</field>
         </record>
 
          <record id="action_bbs_booking_config" model="ir.actions.act_window">
             <field name="name">Booking cinfiguration</field>
             <field name="res_model">bbs_booking.config</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+         <record id="action_bbs_room_type" model="ir.actions.act_window">
+            <field name="name">Room's types'</field>
+            <field name="res_model">bbs_booking.room.type</field>
             <field name="view_mode">tree,form</field>
         </record>
 
@@ -68,13 +80,22 @@
         <menuitem id="menu_bbs_booking" 
             parent="bbs_booking.menu_booking_main"
             name="Bookings"
-            action="action_bbs_booking_booking"/>
+            action="action_bbs_booking_booking"
+            sequence="10"/>
+
+        <menuitem id="menu_bbs_booking_booking_rooms" 
+            parent="bbs_booking.menu_booking_main"
+            name="Rooms/Bookings"
+            action="action_bbs_booking_booking_room"
+            sequence="20"/>
 
         <menuitem id="menu_bbs_booking_rooms" 
             parent="bbs_booking.menu_booking_main"
             name="Rooms"
-            action="action_bbs_booking_booking_room"/>
+            action="action_bbs_booking_room"
+            sequence="30"/>
 
+        <!-- Config -->
 		<menuitem id="menu_booking_configs" 
 			parent="base.menu_base_config"
 			name="Booking"
@@ -84,6 +105,11 @@
 			parent="bbs_booking.menu_booking_configs"
 			name="Config"
 			action="action_bbs_booking_config"/>
+
+        <menuitem id="menu_bbs_room_type" 
+            parent="bbs_booking.menu_booking_configs"
+            name="Room's type"
+            action="action_bbs_room_type"/>
 
 
 
