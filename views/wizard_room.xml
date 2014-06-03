@@ -9,7 +9,7 @@
             <field name="model">bbs_booking.booking.room.wizard</field>
             <field name="arch" type="xml">
                 <form string="Add a room to a booking">
-                    <field name="booking_id" />
+                    <field name="booking_id" invisible="1"/>
                     <field name="room_id" />
                     <button type="object" name="add_room_to_booking" string="Add a room"/>
                 </form>
