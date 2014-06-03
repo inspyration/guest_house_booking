@@ -354,12 +354,6 @@ class RoomType(osv.Model):
             string="Number of place in this room",
         ),
     }
-    
-    def is_free(self, cr, uid, ids, date_start, date_stop, context=None, *args):
-        """
-        Return if the room is free
-        """
-        return True
 
 
 #==============================================================================#
