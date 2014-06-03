@@ -1,0 +1,588 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* bbs_booking
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 8.0alpha1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-16 14:40+0000\n"
+"PO-Revision-Date: 2014-05-16 14:40+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bbs_booking
+#: field:bbs_booking.booking,name:0
+msgid "Title"
+msgstr "Titre"
+
+#. module: bbs_booking
+#: model:email.template,report_name:bbs_booking.email_template_bbs_booking
+msgid "Villa 5 Guadeloupe - Booking"
+msgstr "Villa 5 Guadeloupe - Booking"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Your contact:"
+msgstr "Vos coordonnées :"
+
+#. module: bbs_booking
+#: code:addons/bbs_booking/booking.py:244
+#, python-format
+msgid "Booking <b>denied</b>"
+msgstr "Réservation <b>refusée</b>"
+
+#. module: bbs_booking
+#: field:bbs_booking.booking,message_unread:0
+msgid "Unread Messages"
+msgstr "Messages non-lus"
+
+#. module: bbs_booking
+#: view:bbs_booking.booking:0
+msgid "Réservation"
+msgstr "Réservation"
+
+#. module: bbs_booking
+#: view:bbs_booking.booking:0
+#: report:bbs_booking.voucher.en:0
+msgid "to"
+msgstr "au"
+
+#. module: bbs_booking
+#: view:bbs_booking.booking:0
+msgid "Name of booking"
+msgstr "Nom de la réservation"
+
+#. module: bbs_booking
+#: model:email.template,body_html:bbs_booking.email_template_bbs_booking
+msgid "<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"    <p>Hello ${object.partner_id.name},</p>\n"
+"\n"
+"    <p>Your reservation from ${object.arrival_day} to ${object.departure_day} been accepted.</p>\n"
+"\n"
+"    <p>Attached please find your booking form.</p>\n"
+"    <p>Sincerely</p>\n"
+"    <p>Mr &amp; Mrs Lemiegre</p>\n"
+"\n"
+"</div>"
+msgstr "<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"    <p>Bonjour ${object.partner_id.name},</p>\n"
+"\n"
+"    <p>Votre réservation du ${object.arrival_day} au ${object.departure_day} est acceptée.</p>\n"
+"\n"
+"    <p>Veuillez trouver ci-joint votre bon de réservation.</p>\n"
+"    <p>Sincèrement</p>\n"
+"    <p>M. &amp; Mme Lemiegre</p>\n"
+"\n"
+"</div>"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Virginie SAINT-ETIENNE and her husband await you on the spot to explain the operation of the home alarm , alarm pool for handing the keys , establish an inventory input , receive the deposit check € 1,000 which you will exit if no damage is found ."
+msgstr "Virginie SAINT-ETIENNE and her husband await you on the spot to explain the operation of the home alarm , alarm pool for handing the keys , establish an inventory input , receive the deposit check € 1,000 which you will exit if no damage is found ."
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Term of payment:"
+msgstr "Conditions de réglement :"
+
+#. module: bbs_booking
+#: selection:bbs_booking.booking,state:0
+msgid "Approved"
+msgstr "Approuvée"
+
+#. module: bbs_booking
+#: view:bbs_booking.booking:0
+#: report:bbs_booking.voucher.en:0
+msgid "€"
+msgstr "€"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "06 90 53 06 22"
+msgstr "06 90 53 06 22"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Address to send advance payment and balance:"
+msgstr "Adresse où envoyer l'accompte et le solde :"
+
+#. module: bbs_booking
+#: field:bbs_booking.booking,message_ids:0
+msgid "Messages"
+msgstr "Messages"
+
+#. module: bbs_booking
+#: field:bbs_booking.booking,website_message_ids:0
+msgid "Website Messages"
+msgstr "Website Messages"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Air conditioning in all three bedrooms works perfectly. Just to cool the room , the allumer15 minutes before , taking care to close the doors and windows. Do not abuse the air , any failure requiring the intervention of a technician who takes his time before moving !"
+msgstr "Air conditioning in all three bedrooms works perfectly. Just to cool the room , the allumer15 minutes before , taking care to close the doors and windows. Do not abuse the air , any failure requiring the intervention of a technician who takes his time before moving !"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "(Please return completed, dated, signed and accompanied by your deposit check)"
+msgstr "(Please return completed, dated, signed and accompanied by your deposit check)"
+
+#. module: bbs_booking
+#: help:bbs_booking.booking,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: bbs_booking
+#: view:bbs_booking.booking:0
+msgid "Accepted or pending"
+msgstr "Acceptées ou en attente"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "VILLA 5 reservation – 3 air conditioned bedrooms"
+msgstr "VILLA 5 bon de réservation – 3 chambres climatisées"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Number of persons:"
+msgstr "Nombre de personnes :"
+
+#. module: bbs_booking
+#: help:bbs_booking.booking,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: bbs_booking
+#: model:ir.actions.act_window,name:bbs_booking.action_bbs_booking_booking
+msgid "Booking management"
+msgstr "Gestionnaire de réservation"
+
+#. module: bbs_booking
+#: model:ir.model,name:bbs_booking.model_bbs_booking_booking
+msgid "booking"
+msgstr "réservation"
+
+#. module: bbs_booking
+#: view:bbs_booking.booking:0
+msgid "Partner"
+msgstr "Partenaires"
+
+#. module: bbs_booking
+#: code:addons/bbs_booking/booking.py:188
+#, python-format
+msgid "Booking price has to be set."
+msgstr "Booking price has to be set."
+
+#. module: bbs_booking
+#: view:bbs_booking.booking:0
+msgid "From"
+msgstr "De"
+
+#. module: bbs_booking
+#: field:bbs_booking.booking,arrival_date:0
+msgid "Arrival date"
+msgstr "Date d'arrivée"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Front of the keeper's house , and place the code. The access code is 23 46 A, used only to enter. There is a pedestrian gate : code 23 46. To exit the residence the gate opens automatically."
+msgstr "Front of the keeper's house , and place the code. The access code is 23 46 A, used only to enter. There is a pedestrian gate : code 23 46. To exit the residence the gate opens automatically."
+
+#. module: bbs_booking
+#: code:addons/bbs_booking/booking.py:190
+#, python-format
+msgid "Booking <b>approved</b>"
+msgstr "Réservation <b>acceptée</b>"
+
+#. module: bbs_booking
+#: code:addons/bbs_booking/booking.py:144
+#, python-format
+msgid "Unavailable dates !"
+msgstr "Unavailable dates !"
+
+#. module: bbs_booking
+#: field:bbs_booking.booking,message_follower_ids:0
+msgid "Followers"
+msgstr "Followers"
+
+#. module: bbs_booking
+#: field:bbs_booking.booking,persons_number:0
+msgid "Number of Persons"
+msgstr "Nombre de personnes"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Booking dates:"
+msgstr "Booking dates:"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Phone:"
+msgstr "Téléphone :"
+
+#. module: bbs_booking
+#: field:bbs_booking.booking,arrival_day:0
+msgid "Arrival day"
+msgstr "Date d'arrivée"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Mr & Mme LEMIEGRE"
+msgstr "Mr & Mme LEMIEGRE"
+
+#. module: bbs_booking
+#: code:addons/bbs_booking/booking.py:188
+#, python-format
+msgid "Price not set !"
+msgstr "Price not set !"
+
+#. module: bbs_booking
+#: model:ir.actions.report.xml,name:bbs_booking.report_voucher_en
+msgid "English voucher"
+msgstr "English voucher"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "VERY GOOD HOLIDAY"
+msgstr "VERY GOOD HOLIDAY"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "€ two month before coming"
+msgstr "€ deux mois avant l'arrivée"
+
+#. module: bbs_booking
+#: view:bbs_booking.booking:0
+msgid "Accepted"
+msgstr "Acceptée"
+
+#. module: bbs_booking
+#: view:bbs_booking.booking:0
+msgid "Bookings list"
+msgstr "Liste des réservations"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Ruddy , pool , explain the operation of the pool lighting ."
+msgstr "Ruddy , pool , explain the operation of the pool lighting ."
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Deposit:"
+msgstr "Caution :"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "To climb the stairs , the villa is left , yellow and green. It opens with the kitchen which is on the right side."
+msgstr "To climb the stairs , the villa is left , yellow and green. It opens with the kitchen which is on the right side."
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "1000 € by check on arrival"
+msgstr "1000 € par chèque à la reservation"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Mme LANDAIS Jocelyne"
+msgstr "Mme LANDAIS Jocelyne"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "On your right is a large white gate with a round panel IGUANA BAY."
+msgstr "Sur votre droite se trouve une grande grille blanche avec un panneau rond IGUANA BAY."
+
+#. module: bbs_booking
+#: field:bbs_booking.booking,balance_due:0
+msgid "Balance due"
+msgstr "Solde"
+
+#. module: bbs_booking
+#: model:email.template,subject:bbs_booking.email_template_bbs_booking
+msgid "[Villa 5 Guadeloupe] Booking approved"
+msgstr "[Villa 5 Guadeloupe] Booking approved"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Once past the gate , clean on the left, you can park in front of the villa number 5 ZAGADI ."
+msgstr "Once past the gate , clean on the left, you can park in front of the villa number 5 ZAGADI ."
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Home : 02 35 84 09 96 - Cabinet: 02 35 06 36 36 - Mobile: 06 75 79 33 71"
+msgstr "Home : 02 35 84 09 96 - Cabinet: 02 35 06 36 36 - Mobile: 06 75 79 33 71"
+
+#. module: bbs_booking
+#: field:bbs_booking.booking,deposit:0
+msgid "Deposit"
+msgstr "Acompte"
+
+#. module: bbs_booking
+#: field:bbs_booking.booking,price:0
+msgid "Price of booking"
+msgstr "Prix de la réservation"
+
+#. module: bbs_booking
+#: field:bbs_booking.booking,departure_date:0
+msgid "Departure date"
+msgstr "Date de départ"
+
+#. module: bbs_booking
+#: view:bbs_booking.booking:0
+#: selection:bbs_booking.booking,state:0
+msgid "Denied"
+msgstr "Refusée"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "The telephone number of the villa is 05 90 88 77 25 limited to local calls ."
+msgstr "The telephone number of the villa is 05 90 88 77 25 limited to local calls ."
+
+#. module: bbs_booking
+#: view:bbs_booking.booking:0
+#: selection:bbs_booking.booking,state:0
+msgid "Pending"
+msgstr "En attente"
+
+#. module: bbs_booking
+#: view:bbs_booking.booking:0
+msgid "Accept booking"
+msgstr "Réservation acceptée"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "from"
+msgstr "from"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Balance:"
+msgstr "Solde :"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Mr ou Mme LEMIEGRE (propriétaire)"
+msgstr "Mr ou Mme LEMIEGRE (propriétaire)"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "57 lot les Colibris"
+msgstr "57 lot les Colibris"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "You get it back 10 days after leaving, exect degradation"
+msgstr "Restitué 10 jours après le départ, sauf dégradation"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Check to:"
+msgstr "Chèque à libeller à l'ordre de :"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Contact us our phone in France is :"
+msgstr "Contact us our phone in France is :"
+
+#. module: bbs_booking
+#: field:bbs_booking.booking,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Is a Follower"
+
+#. module: bbs_booking
+#: field:bbs_booking.booking,departure_day:0
+msgid "Departure day"
+msgstr "Departure day"
+
+#. module: bbs_booking
+#: sql_constraint:bbs_booking.booking:0
+msgid "'Arrival day' should be before 'Departure day'"
+msgstr "La date d'arrivée doit être avant la date de départ"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "For contact : Mobile:"
+msgstr "For contact : Mobile:"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "free"
+msgstr "offert"
+
+#. module: bbs_booking
+#: field:bbs_booking.booking,create_date:0
+msgid "Creation date"
+msgstr "Date de création"
+
+#. module: bbs_booking
+#: field:bbs_booking.booking,message_summary:0
+msgid "Summary"
+msgstr "Summary"
+
+#. module: bbs_booking
+#: field:bbs_booking.booking,partner_id:0
+msgid "Client"
+msgstr "Client"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "You can also turn on the two fans in the ceiling in the main room . The switch is located next to the table in the dining room , next to the curtain."
+msgstr "You can also turn on the two fans in the ceiling in the main room . The switch is located next to the table in the dining room , next to the curtain."
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Rate:"
+msgstr "Tarif :"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "€ by check when booking"
+msgstr "€ par chèque à la reservation"
+
+#. module: bbs_booking
+#: view:bbs_booking.booking:0
+msgid "Bookings calendar"
+msgstr "Calendrier des réservations"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "The city five or six hours ahead of Guadeloupe, or when it is 12:00 in Guadeloupe , it is already 17 or 18 hours depending on the season metropolis ."
+msgstr "The city five or six hours ahead of Guadeloupe, or when it is 12:00 in Guadeloupe , it is already 17 or 18 hours depending on the season metropolis ."
+
+#. module: bbs_booking
+#: model:ir.ui.menu,name:bbs_booking.menu_booking_main
+#: model:ir.ui.menu,name:bbs_booking.menu_bbs_booking
+msgid "Bookings"
+msgstr "Réservations"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "They will also give you all the advice you want ( beach, sightseeing , restaurants , attractions , etc.)."
+msgstr "They will also give you all the advice you want ( beach, sightseeing , restaurants , attractions , etc.)."
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "97118 SAINT-FRANÇOIS"
+msgstr "97118 SAINT-FRANÇOIS"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Useful informations:"
+msgstr "Renseignements utiles :"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Let me recall that for young children , only the constant vigilance of parents can prevent accidents."
+msgstr "Let me recall that for young children , only the constant vigilance of parents can prevent accidents."
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Good for agreement: date and tenant's signature"
+msgstr "Bon pour accord : date et signature du locataire"
+
+#. module: bbs_booking
+#: code:addons/bbs_booking/booking.py:144
+#, python-format
+msgid "Unable to book for the selected dates."
+msgstr "Unable to book for the selected dates."
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Details"
+msgstr "Détails"
+
+#. module: bbs_booking
+#: field:bbs_booking.booking,state:0
+msgid "Booking's state"
+msgstr "Statut de la réservation"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Kit 1st breakfast:"
+msgstr "Kit 1er petit déjeuner :"
+
+#. module: bbs_booking
+#: model:res.groups,name:bbs_booking.group_booking_manager
+msgid "Bookings manager"
+msgstr "Gestionnaire des réservation"
+
+#. module: bbs_booking
+#: view:bbs_booking.booking:0
+msgid "Print Voucher"
+msgstr "Imprimer le bon de réservation"
+
+#. module: bbs_booking
+#: view:bbs_booking.booking:0
+msgid "Refuse booking"
+msgstr "Réservation refusée"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "I recommend the guide book is excellent."
+msgstr "I recommend the guide book is excellent."
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Reservation information:"
+msgstr "Informations sur la réservation :"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Advance payment 30%:"
+msgstr "Accompte 30% :"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Do not forget to close vollets and windows, not only in your absence , but also the night."
+msgstr "Do not forget to close vollets and windows, not only in your absence , but also the night."
+
+#. module: bbs_booking
+#: help:bbs_booking.booking,website_message_ids:0
+msgid "Website communication history"
+msgstr "Website communication history"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "In case of problems , please contact the caretaker, Mr. Jacques VULGAR who lives in the house at home with his family. It is available every morning for the resident , and in the evening also ."
+msgstr "In case of problems , please contact the caretaker, Mr. Jacques VULGAR who lives in the house at home with his family. It is available every morning for the resident , and in the evening also ."
+
+#. module: bbs_booking
+#: help:bbs_booking.booking,message_ids:0
+msgid "Messages and communication history"
+msgstr "Messages and communication history"
+
+#. module: bbs_booking
+#: view:bbs_booking.booking:0
+msgid "Filter bookings"
+msgstr "Filtres"
+
+#. module: bbs_booking
+#: view:bbs_booking.booking:0
+msgid "Upcoming"
+msgstr "À venir"
+
+#. module: bbs_booking
+#: view:bbs_booking.booking:0
+msgid "Group by ..."
+msgstr "Group by ..."
+
+#. module: bbs_booking
+#: model:ir.actions.act_window,help:bbs_booking.action_bbs_booking_booking
+msgid "<p class=\"oe_view_nocontent_create\">Create yout first booking!</p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">Créez votre première réservation !</p>\n"
+"            "
+
+#. module: bbs_booking
+#: sql_constraint:bbs_booking.booking:0
+msgid "'Arrival date' should be before 'Departure date'"
+msgstr "La date d'arrivée doit être avant la date de départ"
+
+#. module: bbs_booking
+#: report:bbs_booking.voucher.en:0
+msgid "Email:"
+msgstr "Email :"
+

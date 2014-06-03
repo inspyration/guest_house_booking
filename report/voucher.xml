@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+	        
+        <report
+	        id="report_voucher_en"
+	        string="English voucher"
+	        model="bbs_booking.booking"
+	        name="bbs_booking.voucher"
+	        rml="addons/bbs_booking/report/voucher.rml"
+	        auto="False"
+	        header="True"/>
+	</data>
+</openerp>

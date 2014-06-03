@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<!-- Search -->
+
+        <record id="view_bbs_booking_booking_filter" model="ir.ui.view">
+            <field name="name">bbs_booking.booking.select</field>
+            <field name="model">bbs_booking.booking</field>
+            <field name="arch" type="xml">
+                <search string="Filter bookings">
+                   <field name="name"
+                       filter_domain="['|',('name','ilike',self),('state','=',self)"/>
+                   <filter string="Accepted or pending" name="active" domain="['|',('state','=','approved'),('state','=','pending')]"/>
+                   <separator/>
+                   <filter string="Accepted" name="state_approved" domain="[('state','=','approved')]"/>
+                   <filter string="Pending" name="state_pending" domain="[('state','=','pending')]"/>
+                   <filter string="Denied" name="state_denied" domain="[('state','=','denied')]"/>
+                   <separator/>
+                   <filter string="Upcoming" name="state_avenir" domain="[('arrival_date','>=',context_today().strftime('%Y-%m-%d 00:00:00'))]"/>
+                   <separator/>
+                   <group expand="0" string="Group by ...">
+                       <filter string="Partner" domain="[]" context="{'group_by' : 'partner_id'}" />
+                   </group>
+               </search>
+            </field>
+        </record>
+
+
+
+
+        <!-- Actions -->
+
+         <record id="action_bbs_booking_booking" model="ir.actions.act_window">
+            <field name="name">Booking management</field>
+            <field name="res_model">bbs_booking.booking</field>
+            <field name="view_mode">calendar,tree,form</field>
+            <field name="context">{"search_default_active":1}</field>
+            <field name="search_view_id" ref="view_bbs_booking_booking_filter"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create yout first booking!</p>
+            </field>
+        </record>
+
+         <record id="action_bbs_booking_booking_room" model="ir.actions.act_window">
+            <field name="name">Rooms management</field>
+            <field name="res_model">bbs_booking.booking.room</field>
+            <field name="view_mode">calendar,tree,form</field>
+        </record>
+
+         <record id="action_bbs_booking_config" model="ir.actions.act_window">
+            <field name="name">Booking cinfiguration</field>
+            <field name="res_model">bbs_booking.config</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+
+        <!-- Menu -->
+
+    	<menuitem id="menu_booking_main" 
+			parent="base.menu_base_partner"
+			name="Bookings"
+			sequence="2"
+			groups="group_booking_manager"/>
+
+        <menuitem id="menu_bbs_booking" 
+            parent="bbs_booking.menu_booking_main"
+            name="Bookings"
+            action="action_bbs_booking_booking"/>
+
+        <menuitem id="menu_bbs_booking_rooms" 
+            parent="bbs_booking.menu_booking_main"
+            name="Rooms"
+            action="action_bbs_booking_booking_room"/>
+
+		<menuitem id="menu_booking_configs" 
+			parent="base.menu_base_config"
+			name="Booking"
+            groups="base.group_no_one,group_booking_manager"/>
+
+		<menuitem id="menu_house_config" 
+			parent="bbs_booking.menu_booking_configs"
+			name="Config"
+			action="action_bbs_booking_config"/>
+
+
+
+
+        <!-- Réservation Views -->
+
+		<record id="view_bbs_booking_booking_tree" model="ir.ui.view">
+            <field name="name">bbs_booking.booking.tree</field>
+            <field name="model">bbs_booking.booking</field>
+            <field name="arch" type="xml">
+                <tree string="Bookings list">
+                    <field name="create_date"/>
+                    <field name="name"/>
+                    <field name="arrival_day"/>
+                    <field name="departure_day"/>
+                    <field name="persons_number"/>
+                    <field name="price"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+		<record id="view_bbs_booking_booking_form" model="ir.ui.view">
+            <field name="name">bbs_booking.booking.form</field>
+            <field name="model">bbs_booking.booking</field>
+            <field name="arch" type="xml">
+                <form string="Réservation" version="7.0">
+                	<header>
+                		<button name="accept_booking" string="Accept booking" states="pending,denied" type="object" class="oe_highlight"/>
+                		<button name="refuse_booking" string="Refuse booking" states="pending,approved" type="object" class="oe_highlight"/>
+                		<button name="bbs_booking.report_voucher_en" string="Print Voucher" states="approved" type="action" icon="gtk-print"/>
+                		<field name="state" widget="statusbar" statusbar_visible="pending,approved"/>
+                	</header>
+                	<sheet>
+                		 <div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="Name of booking"/>
+                            <h1><field name="name" class="oe_inline"/></h1>
+                            <h2>From <field name="arrival_day" class="oe_inline"/> to <field name="departure_day" class="oe_inline"/></h2>
+                            <p><label for="price"/> <field name="price" class="oe_inline"/> €</p>
+                        </div>
+                        <group>
+                        	<field name="partner_id"/>
+                        	<field name="persons_number"/>
+                        	<field name="create_date"/>
+                        	<field name="guarantee"/>
+                        	<field name="balance_due"/>
+                        	<field name="config_id"/>
+                        </group>
+                        <notebook>
+                            <page string="Rooms">
+                                <field name="room_ids">
+                                    <!--<tree>
+                                        <field name="name"/>
+                                        <field name="type_id"/>
+                                </tree>-->
+                                </field>
+                            </page>
+                        </notebook>
+                	</sheet>
+	                <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers" groups="res.group_user"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_bbs_booking_booking_calendar" model="ir.ui.view">
+            <field name="name">Booking Calendar</field>
+            <field name="model">bbs_booking.booking</field>
+            <field name="arch" type="xml">
+                <calendar string="Bookings calendar" color="room_ids" date_start="arrival_date" date_stop="departure_date">
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+
+
+
+
+        <!-- Booking Rooms Views -->
+
+        <record id="view_bbs_booking_booking_room_calendar" model="ir.ui.view">
+            <field name="name">Booking Calendar</field>
+            <field name="model">bbs_booking.booking.room</field>
+            <field name="arch" type="xml">
+                <calendar string="Rooms calendar" color="room_id" date_start="arrival_date" date_stop="departure_date">
+                    <field name="booking_id"/>
+                </calendar>
+            </field>
+        </record>
+
+
+
+
+
+	</data>
+</openerp>
+            
