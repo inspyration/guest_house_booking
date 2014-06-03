@@ -279,12 +279,13 @@ class BookingRoom(osv.Model):
             'bbs_booking.room',
             string="Room",
         ),
+        # Fields related to the booking
         'arrival_date': fields.related(
             'booking_id',
             'arrival_day',
             readonly=True,
             type='datetime',
-            relation='bbs_booking.booking.room',
+            relation='bbs_booking.booking',
             string="Arrival day",
         ),
         'departure_date': fields.related(
@@ -292,9 +293,18 @@ class BookingRoom(osv.Model):
             'departure_day',
             readonly=True,
             type='datetime',
-            relation='bbs_booking.booking.room',
+            relation='bbs_booking.booking',
             string="Departure day",
         ),
+        'state': fields.related(
+            'booking_id',
+            'state',
+            readonly=True,
+            type='selection',
+            relation='bbs_booking.booking',
+            string="State",
+        ),
+        # Fields related to the room
         'type_id': fields.related(
             'room_id',
             'type_id',
