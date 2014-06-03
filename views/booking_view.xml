@@ -134,6 +134,7 @@
                         </group>
                         <notebook>
                             <page string="Rooms">
+                                <button type="action" target="new" name="%(wizard_add_room)d" string="Add a room" context="{'booking_id': id}" />
                                 <field name="room_ids">
                                     <tree>
                                         <field name="room_id"/>

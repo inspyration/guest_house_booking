@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+
+        <!-- View -->
+        <record model="ir.ui.view" id="wizard_add_room_form_view">
+            <field name="name">wizard.bbs_booking.add.room</field>
+            <field name="model">bbs_booking.booking.room.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Add a room to a booking">
+                    <field name="booking_id" />
+                    <field name="room_id" />
+                    <button type="object" name="add_room_to_booking" string="Add a room"/>
+                </form>
+            </field>
+        </record>
+
+        <!-- Actions window -->
+        <record model="ir.actions.act_window" id="wizard_add_room">
+            <field name="name">Add a room</field>
+            <field name="res_model">bbs_booking.booking.room.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+    </data>
+</openerp>
