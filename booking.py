@@ -246,10 +246,12 @@ class BookingRoom(osv.Model):
         'booking_id': fields.many2one(
             'bbs_booking.booking',
             string="Booking",
+            required=True,
         ),
         'room_id': fields.many2one(
             'bbs_booking.room',
             string="Room",
+            required=True,
         ),
         # Fields related to the booking
         'arrival_date': fields.related(
@@ -346,6 +348,8 @@ class RoomType(osv.Model):
     _name = "bbs_booking.room.type"
     _description = ""
     
+    # Simple room, double, twin, triple, quadruple, etc.
+    
     _columns = {
         'name': fields.char(
             'Title',
@@ -365,8 +369,6 @@ class RoomType(osv.Model):
 class BookingConfig(osv.Model):
     _name = "bbs_booking.config"
     _description = ""
-    
-    # Simple room, double, twin, triple, quadruple, etc.
     
     _columns = {
         'name': fields.char(
