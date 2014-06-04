@@ -181,7 +181,7 @@ class Booking(osv.Model):
             _logger.debug("Calcul de plage disponible en update !")
             # Checking available periods. (if it is true, we are sure that there is one and only one id in 'ids')
             if not self.check_availability(cr, uid, arrival_date, departure_date, current_id=ids[0], context=context):
-                raise osv.except_osv(('Unavailable dates !'), ("Unable to book for the selected dates."))
+                raise osv.except_osv(('Unavailable dates !'), ("No rooms available for the selected dates."))
 
 #         self.message_post(cr, uid, ids, _('Booking <b>updated</b>'), context=context)
 
