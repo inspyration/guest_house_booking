@@ -311,11 +311,6 @@ class Room(osv.Model):
             'bbs_booking.room.type',
             string="Type of the room",
         ),
-        'booking_ids': fields.one2many(
-            'bbs_booking.booking.room',
-            'room_id',
-            string="Bookings",
-        ),
     }
     
     def is_available(self, cr, uid, id, date_start, date_stop, context=None, *args):
