@@ -44,6 +44,20 @@
             </field>
         </record>
 
+        <record id="view_bbs_booking_room_filter" model="ir.ui.view">
+            <field name="name">bbs_booking.room.select</field>
+            <field name="model">bbs_booking.room</field>
+            <field name="arch" type="xml">
+                <search string="Filter bookings room">
+                   <field name="name" filter_domain="[('name','ilike',self)]"/>
+                   <field name="type_id"/>
+                   <group expand="0" string="Group by ...">
+                       <filter string="Type" domain="[]" context="{'group_by' : 'type_id'}" />
+                   </group>
+               </search>
+            </field>
+        </record>
+
 
 
 
@@ -71,6 +85,7 @@
          <record id="action_bbs_booking_room" model="ir.actions.act_window">
             <field name="name">Rooms management</field>
             <field name="res_model">bbs_booking.room</field>
+            <field name="search_view_id" ref="view_bbs_booking_room_filter"/>
             <field name="view_mode">tree,form</field>
         </record>
 
@@ -224,6 +239,21 @@
             </field>
         </record>
 
+
+
+
+        <!-- Room Views -->
+
+        <record id="view_bbs_booking_room_tree" model="ir.ui.view">
+            <field name="name">bbs_booking.room.tree</field>
+            <field name="model">bbs_booking.room</field>
+            <field name="arch" type="xml">
+                <tree string="Room list">
+                    <field name="name"/>
+                    <field name="type_id"/>
+                </tree>
+            </field>
+        </record>
 
 
 
