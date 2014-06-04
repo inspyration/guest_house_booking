@@ -241,6 +241,12 @@ class Booking(osv.Model):
 class BookingRoom(osv.Model):
     _name = "bbs_booking.booking.room"
     _description = "Booking - Room relation"
+
+    _states = [
+        ('pending', "Pending"),
+        ('approved', "Approved"),
+        ('denied', "Denied"),
+    ]
     
     _columns = {
         'booking_id': fields.many2one(
