@@ -225,41 +225,12 @@ class Booking(osv.Model):
 
     def check_availability(self, cr, uid, arrival_date, departure_date, current_id=None, context=None):
         """
-        Return True if all dates between arrival_date and departure_date are available, False otherwise.
+        Return True if at least a room is available between arrival_date and departure_date, False otherwise.
         """
-        # sch : supprimé au 15 mai
-        #if len(arrival_date) == 10:
-        #    arrival_date += " 16:00:00"
-        #if len(departure_date) == 10:
-        #    departure_date += " 16:00:00"
-        # Domain of bookings crossing targeted period.
-        domaine = [
-            ('state', '!=', 'denied'),
-            '!',
-            '|',
-            ('arrival_date','>=',departure_date),
-            ('departure_date','<=',arrival_date),
-        ]
-        
-        sch = self.search(cr, uid, [], context=context)
-        brw = self.browse(cr, uid, sch, context=context)
-        for b in brw:
-            _logger.debug("Dates courantes : %s, %s" % (b.arrival_date, b.departure_date))
-
-
-        # Remove current booking.
-        if current_id is not None:
-            _logger.debug("Rajout de l'identifiant : %s" % current_id)
-            domaine.insert(0, ('id', '!=', current_id))
-
-        search = self.search(cr, uid, domaine, context=context)
-        _logger.debug("------\nsearch : %s\n%s\n" % (search, domaine))
-        long = len(search)
-        _logger.debug("len du search : %s" % long)
-        res = long == 0
-        _logger.debug("res (true or false) : %s" % res)
-        return True
-        #return res
+        room_model = self.pool.get('bbs_booking.room')
+        room_ids = room_model.search(cr, uid, [], context=context)
+        result = [id for id in room_ids if room_model.is_available(cr, uid, id,arrival_date, departure_date, context=context)]
+        return len(result)>0
 
 
 
@@ -345,13 +316,13 @@ class Room(osv.Model):
         ),
     }
     
-    def is_available(self, cr, uid, ids, date_start, date_stop, context=None, *args):
+    def is_available(self, cr, uid, id, date_start, date_stop, context=None, *args):
         """
         Return if the room is free
         """
         booking_room_model = self.pool.get('bbs_booking.booking.room')
         args_search = [
-            ('room_id','=',ids),
+            ('room_id','=',id),
             ('state', '!=', 'denied'),
             '!',
             '|',
