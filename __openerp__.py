@@ -15,6 +15,7 @@
     'data': [
         'security/booking_security.xml',
         'security/ir.model.access.csv',
+        'demo/bbs_booking_demo.xml',
         'views/wizard_room.xml',
         'views/booking_view.xml',
         'report/voucher.xml',

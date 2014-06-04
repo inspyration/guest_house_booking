@@ -375,10 +375,8 @@ class BookingConfig(osv.Model):
         ),
         'guarantee': fields.integer(
             string="Guarantee (%)",
-            required=True,
         ),
         'deposit': fields.integer(
             string="Deposit",
-            required=True,
         ),
     }
