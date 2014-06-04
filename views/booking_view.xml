@@ -26,6 +26,24 @@
             </field>
         </record>
 
+        <record id="view_bbs_booking_booking_room_filter" model="ir.ui.view">
+            <field name="name">bbs_booking.booking.room.select</field>
+            <field name="model">bbs_booking.booking.room</field>
+            <field name="arch" type="xml">
+                <search string="Filter bookings room">
+                   <field name="type_id"/>
+                   <field name="room_id"/>
+                   <filter string="Accepted or pending" name="active" domain="['|',('state','=','approved'),('state','=','pending')]"/>
+                   <separator/>
+                   <filter string="Accepted" name="state_approved" domain="[('state','=','approved')]"/>
+                   <filter string="Pending" name="state_pending" domain="[('state','=','pending')]"/>
+                   <filter string="Denied" name="state_denied" domain="[('state','=','denied')]"/>
+                   <separator/>
+                   <filter string="Upcoming" name="state_avenir" domain="[('arrival_date','>=',context_today().strftime('%Y-%m-%d 00:00:00'))]"/>
+               </search>
+            </field>
+        </record>
+
 
 
 
@@ -38,13 +56,15 @@
             <field name="context">{"search_default_active":1}</field>
             <field name="search_view_id" ref="view_bbs_booking_booking_filter"/>
             <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Create yout first booking!</p>
+                <p class="oe_view_nocontent_create">Create your first booking!</p>
             </field>
         </record>
 
          <record id="action_bbs_booking_booking_room" model="ir.actions.act_window">
             <field name="name">Bookings' Rooms management</field>
             <field name="res_model">bbs_booking.booking.room</field>
+            <field name="context">{"search_default_active":1}</field>
+            <field name="search_view_id" ref="view_bbs_booking_booking_room_filter"/>
             <field name="view_mode">calendar</field>
         </record>
 
@@ -199,6 +219,7 @@
             <field name="arch" type="xml">
                 <calendar string="Rooms calendar" color="room_id" date_start="arrival_date" date_stop="departure_date">
                     <field name="booking_id"/>
+                    <field name="state"/>
                 </calendar>
             </field>
         </record>
