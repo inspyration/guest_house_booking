@@ -16,7 +16,7 @@ _logger = logging.getLogger('INSPY_booking')
 #==============================================================================#
 class Booking(osv.Model):
     _name = "bbs_booking.booking"
-    _description = "booking"
+    _description = "Booking"
     _inherit = ['mail.thread']
 
     _states = [
@@ -240,7 +240,7 @@ class Booking(osv.Model):
 #==============================================================================#
 class BookingRoom(osv.Model):
     _name = "bbs_booking.booking.room"
-    _description = ""
+    _description = "Booking - Room relation"
     
     _columns = {
         'booking_id': fields.many2one(
@@ -298,7 +298,7 @@ class BookingRoom(osv.Model):
 #==============================================================================#
 class Room(osv.Model):
     _name = "bbs_booking.room"
-    _description = ""
+    _description = "Room"
     
     _columns = {
         'name': fields.char(
@@ -342,7 +342,7 @@ class Room(osv.Model):
 #==============================================================================#
 class RoomType(osv.Model):
     _name = "bbs_booking.room.type"
-    _description = ""
+    _description = "Room type"
     
     # Simple room, double, twin, triple, quadruple, etc.
     
@@ -365,17 +365,20 @@ class RoomType(osv.Model):
 #==============================================================================#
 class BookingConfig(osv.Model):
     _name = "bbs_booking.config"
-    _description = ""
+    _description = "Booking configuration"
     
     _columns = {
         'name': fields.char(
             string="Name",
-            help="Used for the voucher's title"
+            help="Used for the voucher's title",
+            required=True,
         ),
         'guarantee': fields.integer(
             string="Guarantee (%)",
+            required=True,
         ),
         'deposit': fields.integer(
             string="Deposit",
+            required=True,
         ),
     }
