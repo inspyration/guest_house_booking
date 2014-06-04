@@ -310,6 +310,7 @@ class Room(osv.Model):
         'type_id': fields.many2one(
             'bbs_booking.room.type',
             string="Type of the room",
+            help="For example: Simple, Double, Twin, Triple...",
         ),
     }
     
@@ -351,6 +352,7 @@ class RoomType(osv.Model):
             size=256,
             required=True,
             select=True,
+            help="For example: Simple, Double, Twin, Triple...",
         ),
         'nb_berth': fields.integer( 
             string="Number of place in this room",
