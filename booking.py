@@ -130,11 +130,6 @@ class Booking(osv.Model):
 
     _sql_constraints = [
         (
-            "bbs_booking_arrival_before_departure_date_constraint",
-            "CHECK(arrival_date < departure_date)",
-            "'Arrival date' should be before 'Departure date'",
-        ),
-        (
             "bbs_booking_arrival_before_departure_day_constraint",
             "CHECK(arrival_day < departure_day)",
             "'Arrival day' should be before 'Departure day'",
