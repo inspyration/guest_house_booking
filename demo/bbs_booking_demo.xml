@@ -1,0 +1,156 @@
+<openerp>
+    <data noupdate="1">
+        <!-- Room types -->
+        <record id="demo_bbs_booking_room_type_0" model="bbs_booking.room.type">
+            <field name="name">Simple</field>
+            <field name="nb_berth">1</field>
+        </record>
+        <record id="demo_bbs_booking_room_type_1" model="bbs_booking.room.type">
+            <field name="name">Double</field>
+            <field name="nb_berth">2</field>
+        </record>
+        <record id="demo_bbs_booking_room_type_2" model="bbs_booking.room.type">
+            <field name="name">Twin</field>
+            <field name="nb_berth">2</field>
+        </record>
+        <record id="demo_bbs_booking_room_type_3" model="bbs_booking.room.type">
+            <field name="name">Triple</field>
+            <field name="nb_berth">3</field>
+        </record>
+        <record id="demo_bbs_booking_room_type_4" model="bbs_booking.room.type">
+            <field name="name">Flat</field>
+            <field name="nb_berth">5</field>
+        </record>
+        
+        <!-- Rooms -->
+        <record id="demo_bbs_booking_room_0" model="bbs_booking.room">
+            <field name="name">Room 1</field>
+            <field name="type_id" eval="demo_bbs_booking_room_type_0"/>
+        </record>
+        <record id="demo_bbs_booking_room_1" model="bbs_booking.room">
+            <field name="name">Room 2</field>
+            <field name="type_id" eval="demo_bbs_booking_room_type_1"/>
+        </record>
+        <record id="demo_bbs_booking_room_2" model="bbs_booking.room">
+            <field name="name">Room 3</field>
+            <field name="type_id" eval="demo_bbs_booking_room_type_1"/>
+        </record>
+        <record id="demo_bbs_booking_room_3" model="bbs_booking.room">
+            <field name="name">Room 4</field>
+            <field name="type_id" eval="demo_bbs_booking_room_type_2"/>
+        </record>
+        <record id="demo_bbs_booking_room_4" model="bbs_booking.room">
+            <field name="name">Room 5</field>
+            <field name="type_id" eval="demo_bbs_booking_room_type_3"/>
+        </record>
+        <record id="demo_bbs_booking_room_5" model="bbs_booking.room">
+            <field name="name">Little flat</field>
+            <field name="type_id" eval="demo_bbs_booking_room_type_4"/>
+        </record>
+        
+        <!-- Bookings configuration -->
+        <record id="demo_bbs_booking_config_0" model="bbs_booking.config">
+            <field name="name">Config Room</field>
+            <field name="deposit">0</field>
+        </record>
+        <record id="demo_bbs_booking_config_1" model="bbs_booking.config">
+            <field name="name">Config Flat</field>
+            <field name="guarantee">40</field>
+            <field name="deposit">200</field>
+        </record>
+        
+        <!-- Bookings -->
+        <record id="demo_bbs_booking_booking_0" model="bbs_booking.booking">
+            <field name="name">Reservation 1</field>
+            <field name="arrival_day" eval="time.strftime('%Y-%m')+'-06'"/>
+            <field name="departure_day" eval="time.strftime('%Y-%m')+'-13'"/>
+            <field name="persons_number">2</field>
+            <field name="state">approved</field>
+            <field name="partner_id" eval="res_partner_address_2"/>
+            <field name="price">600</field>
+            <field name="config_id" eval="demo_bbs_booking_config_0"/>
+        </record>
+        <record id="demo_bbs_booking_booking_1" model="bbs_booking.booking">
+            <field name="name">Reservation 2</field>
+            <field name="arrival_day" eval="time.strftime('%Y-%m')+'-13'"/>
+            <field name="departure_day" eval="time.strftime('%Y-%m')+'-14'"/>
+            <field name="persons_number">4</field>
+            <field name="state">pending</field>
+            <field name="partner_id" eval="res_partner_address_1"/>
+            <field name="price">400</field>
+            <field name="config_id" eval="demo_bbs_booking_config_0"/>
+        </record>
+        <record id="demo_bbs_booking_booking_2" model="bbs_booking.booking">
+            <field name="name">Reservation 3</field>
+            <field name="arrival_day" eval="time.strftime('%Y-%m')+'-13'"/>
+            <field name="departure_day" eval="time.strftime('%Y-%m')+'-20'"/>
+            <field name="state">approved</field>
+            <field name="partner_id" eval="res_partner_address_7"/>
+            <field name="price">320</field>
+            <field name="config_id" eval="demo_bbs_booking_config_0"/>
+        </record>
+        <record id="demo_bbs_booking_booking_3" model="bbs_booking.booking">
+            <field name="name">Reservation 4</field>
+            <field name="arrival_day" eval="time.strftime('%Y-%m')+'-12'"/>
+            <field name="departure_day" eval="time.strftime('%Y-%m')+'-26'"/>
+            <field name="state">approved</field>
+            <field name="partner_id" eval="res_partner_address_8"/>
+            <field name="price">2300</field>
+            <field name="config_id" eval="demo_bbs_booking_config_1"/>
+        </record>
+        <record id="demo_bbs_booking_booking_4" model="bbs_booking.booking">
+            <field name="name">Reservation 5</field>
+            <field name="arrival_day" eval="time.strftime('%Y-%m')+'-13'"/>
+            <field name="departure_day" eval="time.strftime('%Y-%m')+'-14'"/>
+            <field name="persons_number">3</field>
+            <field name="state">approved</field>
+            <field name="partner_id" eval="res_partner_address_9"/>
+            <field name="partner_id" eval="bbs_booking_partner_address_1"/>
+            <field name="price">250</field>
+            <field name="config_id" eval="demo_bbs_booking_config_0"/>
+        </record>
+        <record id="demo_bbs_booking_booking_5" model="bbs_booking.booking">
+            <field name="name">Reservation 5</field>
+            <field name="arrival_day" eval="time.strftime('%Y-%m')+'-13'"/>
+            <field name="departure_day" eval="time.strftime('%Y-%m')+'-14'"/>
+            <field name="state">denied</field>
+            <field name="partner_id" eval="res_partner_address_8"/>
+            <field name="config_id" eval="demo_bbs_booking_config_0"/>
+        </record>
+        
+        <!-- Bookings Room Rel-->
+        <record id="demo_bbs_booking_booking_room_0" model="bbs_booking.booking.room">
+            <field name="booking_id" eval="demo_bbs_booking_booking_0"/>
+            <field name="room_id" eval="demo_bbs_booking_room_1"/>
+        </record>
+        <record id="demo_bbs_booking_booking_room_1" model="bbs_booking.booking.room">
+            <field name="booking_id" eval="demo_bbs_booking_booking_1"/>
+            <field name="room_id" eval="demo_bbs_booking_room_1"/>
+        </record>
+        <record id="demo_bbs_booking_booking_room_2" model="bbs_booking.booking.room">
+            <field name="booking_id" eval="demo_bbs_booking_booking_1"/>
+            <field name="room_id" eval="demo_bbs_booking_room_2"/>
+        </record>
+        <record id="demo_bbs_booking_booking_room_3" model="bbs_booking.booking.room">
+            <field name="booking_id" eval="demo_bbs_booking_booking_2"/>
+            <field name="room_id" eval="demo_bbs_booking_room_0"/>
+        </record>
+        <record id="demo_bbs_booking_booking_room_4" model="bbs_booking.booking.room">
+            <field name="booking_id" eval="demo_bbs_booking_booking_2"/>
+            <field name="room_id" eval="demo_bbs_booking_room_3"/>
+        </record>
+        <record id="demo_bbs_booking_booking_room_5" model="bbs_booking.booking.room">
+            <field name="booking_id" eval="demo_bbs_booking_booking_3"/>
+            <field name="room_id" eval="demo_bbs_booking_room_5"/>
+        </record>
+        <record id="demo_bbs_booking_booking_room_6" model="bbs_booking.booking.room">
+            <field name="booking_id" eval="demo_bbs_booking_booking_4"/>
+            <field name="room_id" eval="demo_bbs_booking_room_4"/>
+        </record>
+        <record id="demo_bbs_booking_booking_room_6" model="bbs_booking.booking.room">
+            <field name="booking_id" eval="demo_bbs_booking_booking_5"/>
+            <field name="room_id" eval="demo_bbs_booking_room_5"/>
+        </record>
+        
+    </data>
+</openerp>
