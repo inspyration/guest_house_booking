@@ -90,7 +90,7 @@
         </record>
 
          <record id="action_bbs_booking_config" model="ir.actions.act_window">
-            <field name="name">Booking cinfiguration</field>
+            <field name="name">Booking configuration</field>
             <field name="res_model">bbs_booking.config</field>
             <field name="view_mode">tree,form</field>
         </record>
