@@ -51,12 +51,12 @@
         <!-- Bookings configuration -->
         <record id="demo_bbs_booking_config_0" model="bbs_booking.config">
             <field name="name">Config Room</field>
-            <field name="deposit">0</field>
+            <field name="guarantee">20</field>
         </record>
         <record id="demo_bbs_booking_config_1" model="bbs_booking.config">
             <field name="name">Config Flat</field>
             <field name="guarantee">40</field>
-            <field name="deposit">200</field>
+            <field name="deposit">1000</field>
         </record>
         
         <!-- Bookings -->
