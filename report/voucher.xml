@@ -3,8 +3,8 @@
 	<data>
 	        
         <report
-	        id="report_voucher_en"
-	        string="English voucher"
+	        id="report_voucher"
+	        string="Voucher"
 	        model="bbs_booking.booking"
 	        name="bbs_booking.voucher"
 	        rml="addons/bbs_booking/report/voucher.rml"

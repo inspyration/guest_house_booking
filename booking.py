@@ -147,7 +147,7 @@ class Booking(osv.Model):
         _logger.info("Jour arrivee : %s (%s)" % (values['arrival_day'], type(values['arrival_day'])))
         _logger.info("Jour depart  : %s (%s)" % (values['departure_day'], type(values['departure_day'])))
         if not self.check_availability(cr, uid, arrival_date, departure_date, context=context):
-            raise osv.except_osv(_('Unavailable dates !'), _("Unable to book for the selected dates."))
+            raise osv.except_osv(_('Unavailable dates!'), _("Unable to book for the selected dates."))
         return osv.Model.create(self, cr, uid, values, context=context)
 
     def write(self, cr, uid, ids, values, context=None):
@@ -156,7 +156,7 @@ class Booking(osv.Model):
         """
         # Can't change many booking dates at once.
         if type(ids) == list and len(ids) > 1 and ('arrival_date' in values or 'departure_date' in values):
-            raise osv.except_osv(('Date Change denied !'), ("Changing departure or arrival dates for several bookings at the same time is not allowed."))
+            raise osv.except_osv(('Date Change denied!'), ("Changing departure or arrival dates for several bookings at the same time is not allowed."))
         elif type(ids) != list:
             ids = [ids]
 
@@ -172,11 +172,11 @@ class Booking(osv.Model):
             read = self.read(cr, uid, ids[0], ['arrival_date'], context=context)
             arrival_date, departure_date = read['arrival_date'], values['departure_day'] + " 10:00:00"
 
-        if arrival_date is not None: # departure_date is not None too !
-            _logger.debug("Calcul de plage disponible en update !")
+        if arrival_date is not None: # departure_date is not None too!
+            _logger.debug("Calcul de plage disponible en update!")
             # Checking available periods. (if it is true, we are sure that there is one and only one id in 'ids')
             if not self.check_availability(cr, uid, arrival_date, departure_date, current_id=ids[0], context=context):
-                raise osv.except_osv(('Unavailable dates !'), ("No rooms available for the selected dates."))
+                raise osv.except_osv(('Unavailable dates!'), ("No rooms available for the selected dates."))
 
 #         self.message_post(cr, uid, ids, _('Booking <b>updated</b>'), context=context)
 
@@ -191,7 +191,7 @@ class Booking(osv.Model):
             ids = [ids]
         read = self.read(cr, uid, ids, ['price','config_id'], context=context)
         if any(r['price'] <= 0 for r in read):
-            raise osv.except_osv(_('Price not set !'), _("Booking price has to be set."))
+            raise osv.except_osv(_('Price not set!'), _("Booking price has to be set."))
         if any(not r['config_id'] for r in read): 
             raise osv.except_osv(_('No booking configuration!'), _("Please choose a booking configuration"))
         self.write(cr, uid, ids, {'state': 'approved'})

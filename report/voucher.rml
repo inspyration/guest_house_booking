@@ -26,10 +26,6 @@
       <blockAlignment value="LEFT"/>
       <blockValign value="TOP"/>
     </blockTableStyle>
-    <blockTableStyle id="Tableau2">
-      <blockAlignment value="LEFT"/>
-      <blockValign value="TOP"/>
-    </blockTableStyle>
     <initialize>
       <paraStyle name="all" alignment="justify"/>
     </initialize>
@@ -95,7 +91,7 @@
     <para style="terp_default_8">
       <font color="white"> </font>
     </para>
-    <para style="terp_header_Centre">Reservation</para>
+    <para style="terp_header_Centre">[[ o.config_id.name.title() or "Reservation" ]]</para>
     <para style="terp_default_Centre_9">(Please return completed, dated, signed and accompanied by your deposit check)</para>
     <para style="terp_default_8">
       <font color="white"> </font>
@@ -178,8 +174,7 @@
           <para style="terp_default_Right_8">Deposit:</para>
         </td>
         <td>
-          <para style="terp_default_8">1000 € by check on arrival</para>
-          <para style="terp_default_8">You get it back 10 days after leaving, exect degradation</para>
+          <para style="terp_default_8">[[ o.config_id.deposit ]] € by check on arrival</para>
         </td>
       </tr>
       <tr>
@@ -192,10 +187,10 @@
       </tr>
       <tr>
         <td>
-          <para style="terp_default_Right_8">Advance payment 30%:</para>
+          <para style="terp_default_Right_8">Advance payment [[ o.config_id.guarantee ]]%:</para>
         </td>
         <td>
-          <para style="terp_default_8">[[ o.deposit ]] € by check when booking</para>
+          <para style="terp_default_8">[[ o.guarantee ]] € by check when booking</para>
         </td>
       </tr>
       <tr>
@@ -206,49 +201,8 @@
           <para style="terp_default_8">[[ o.balance_due ]] € two month before coming</para>
         </td>
       </tr>
-      <tr>
-        <td>
-          <para style="terp_default_Right_8">Kit 1st breakfast:</para>
-        </td>
-        <td>
-          <para style="terp_default_8">free</para>
-        </td>
-      </tr>
     </blockTable>
     <para style="Standard">
-      <font color="white"> </font>
-    </para>
-    <blockTable colWidths="167.0,364.0" style="Tableau2">
-      <tr>
-        <td>
-          <para style="terp_default_Bold_9">Term of payment:</para>
-        </td>
-        <td>
-          <para style="terp_default_8">
-            <font color="white"> </font>
-          </para>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <para style="terp_default_Right_8">Address to send advance payment and balance:</para>
-        </td>
-        <td>
-          <para style="terp_default_8">Mme LANDAIS Jocelyne</para>
-          <para style="terp_default_8">57 lot les Colibris</para>
-          <para style="terp_default_8">97118 SAINT-FRANÇOIS</para>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <para style="terp_default_Right_8">Check to:</para>
-        </td>
-        <td>
-          <para style="terp_default_8">Mr ou Mme LEMIEGRE (propriétaire)</para>
-        </td>
-      </tr>
-    </blockTable>
-    <para style="terp_default_8">
       <font color="white"> </font>
     </para>
     <para style="terp_default_8">

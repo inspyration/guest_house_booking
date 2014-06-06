@@ -96,7 +96,7 @@
         </record>
 
          <record id="action_bbs_room_type" model="ir.actions.act_window">
-            <field name="name">Room's types'</field>
+            <field name="name">Room's types</field>
             <field name="res_model">bbs_booking.room.type</field>
             <field name="view_mode">tree,form</field>
         </record>
@@ -138,7 +138,7 @@
 
 		<menuitem id="menu_house_config" 
 			parent="bbs_booking.menu_booking_configs"
-			name="Config"
+			name="Configuration"
 			action="action_bbs_booking_config"/>
 
         <menuitem id="menu_bbs_room_type" 
@@ -171,11 +171,11 @@
             <field name="name">bbs_booking.booking.form</field>
             <field name="model">bbs_booking.booking</field>
             <field name="arch" type="xml">
-                <form string="Réservation" version="7.0">
+                <form string="Booking" version="7.0">
                 	<header>
                 		<button name="accept_booking" string="Accept booking" states="pending,denied" type="object" class="oe_highlight"/>
                 		<button name="refuse_booking" string="Refuse booking" states="pending,approved" type="object" class="oe_highlight"/>
-                		<button name="bbs_booking.report_voucher_en" string="Print Voucher" states="approved" type="action" icon="gtk-print"/>
+                		<button name="bbs_booking.report_voucher" string="Print Voucher" states="approved" type="action" icon="gtk-print"/>
                 		<field name="state" widget="statusbar" statusbar_visible="pending,approved"/>
                 	</header>
                 	<sheet>
