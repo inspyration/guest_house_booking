@@ -16,6 +16,7 @@
         'security/booking_security.xml',
         'security/ir.model.access.csv',
         'views/wizard_room.xml',
+        'views/wizard_available_rooms.xml',
         'views/booking_view.xml',
         'report/voucher.xml',
         'views/email.xml',

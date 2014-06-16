@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+
+        <!-- View -->
+        <record model="ir.ui.view" id="wizard_search_available_room_form_view">
+            <field name="name">wizard.bbs_booking.search.available.room</field>
+            <field name="model">bbs_booking.available.rooms.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Search available rooms">
+                    <field name="arrival_day"/>
+                    <field name="departure_day"/>
+                    <field name="persons_number"/>
+                    <button type="object" name="search_available_rooms" string="Search"/>
+                </form>
+            </field>
+        </record>
+
+        <!-- Actions window -->
+        <record model="ir.actions.act_window" id="action_wizard_search_available_rooms">
+            <field name="name">Search available rooms</field>
+            <field name="res_model">bbs_booking.available.rooms.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- Menus -->
+
+        <menuitem id="menu_wizard_search_available_rooms" 
+            parent="bbs_booking.menu_booking_main"
+            name="Search available rooms"
+            action="action_wizard_search_available_rooms"
+            sequence="40"/>
+        
+
+
+    </data>
+</openerp>

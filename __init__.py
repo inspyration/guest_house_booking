@@ -10,3 +10,4 @@ _logger.addHandler(_logger_file_handler)
 import booking
 
 import wizards.room
+import wizards.available_rooms
